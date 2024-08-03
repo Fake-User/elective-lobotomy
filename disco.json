@@ -2,8 +2,7 @@
     "version": "1.0",
     "services": {
         "web": {
-            "command": "bun run srvr.js",
-            "port": 8128
+            "port": 3000
         }
     }
 }

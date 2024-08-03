@@ -1,0 +1,12 @@
+{
+  "name": "srvr",
+  "module": "index.js",
+  "type": "module",
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.8",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
