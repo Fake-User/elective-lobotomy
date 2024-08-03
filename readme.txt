@@ -1,1 +1,1 @@
-disco projects:add --github Fake-User/elective-lobotomy --name destruct --domain destruct.rcdis.co
+disco projects:add --github Fake-User/elective-lobotomy --name reestruct --domain reestruct.rcdis.co
