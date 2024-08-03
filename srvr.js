@@ -30,7 +30,7 @@ async function getCreds(){
 };
 
 Bun.serve({
-    port: 3000,
+    port: 8128,
     async fetch(req){
         const path = new URL(req.url).pathname;
         switch(true){
