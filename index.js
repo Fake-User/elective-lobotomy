@@ -21,7 +21,7 @@ async function getCreds(){
     .then(res => {
         creds = {
             access_key_id: res.result.accessKeyId,
-            secret_access_ley: res.result.secretAccessKey,
+            secret_access_key: res.result.secretAccessKey,
             session_token: res.result.sessionToken
         }
     })
