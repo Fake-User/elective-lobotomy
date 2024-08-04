@@ -29,14 +29,14 @@ async function getCreds(){
     return creds;
 };
 
-async function writeDbUtc(){
-    await Bun.write("./store/db-utc.txt", "XXXX-XX-XX XX:XX:XX");
+async function initUTC(){
+    await Bun.write("./store/utc.txt", "XXXX-XX-XX XX:XX:XX");
 }
-writeDbUtc();
+initUTC();
 
 let dbUtc = "";
-async function getDbUtc(){
-    const file = Bun.file("./store/db-utc.txt");
+async function getUTC(){
+    const file = Bun.file("./store/utc.txt");
     dbUtc = await file.text();
 }
 getDbUtc();
@@ -56,7 +56,7 @@ Bun.serve({
             case path === "/set-utc":
                 return Response("fuck off");
 
-            case path === "/db-utc":
+            case path === "/utc":
                 return Response(dbUtc);
 
             default:
