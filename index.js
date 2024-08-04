@@ -30,11 +30,11 @@ async function getCreds(){
 };
 
 async function writeDbUtc(){
-    await Bun.write("./store/db-utc.txt", "test");
+    await Bun.write("./store/db-utc.txt", "XXXX-XX-XX XX:XX:XX");
 }
 writeDbUtc();
 
-let dbUtc = "no timestamp found";
+let dbUtc = "";
 async function getDbUtc(){
     const file = Bun.file("./store/db-utc.txt");
     dbUtc = await file.text();
@@ -54,7 +54,7 @@ Bun.serve({
                 return Response.json(creds);
 
             case path === "/set-utc":
-                console.log
+                return Response("fuck off");
 
             case path === "/db-utc":
                 return Response(dbUtc);
