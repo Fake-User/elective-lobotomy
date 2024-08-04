@@ -29,7 +29,7 @@ async function getCreds(){
     return creds;
 };
 
-let dbUtc = "";
+let dbUtc = "no timestamp found";
 async function getDbUtc(){
     const file = Bun.file("./store/db-utc.txt");
     dbUtc = await file.text();
@@ -48,8 +48,7 @@ Bun.serve({
                 return Response.json(creds);
 
             case path === "/db-utc":
-                if(dbUtc != ""){return Response(dbUtc)}
-                else{return Response("no timestamp found")}
+                return Response(dbUtc);
 
             default:
                 return Response("nah mate");
