@@ -39,7 +39,14 @@ async function getUTC(){
     const file = Bun.file("./store/utc.txt");
     dbUtc = await file.text();
 }
-getDbUtc();
+getUTC();
+
+const headers = {
+    headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
+    }
+}
 
 Bun.serve({
     port: 3000,
@@ -51,16 +58,16 @@ Bun.serve({
 
             case path === "/creds":
                 let creds = await getCreds();
-                return Response.json(creds);
+                return Response.json(creds, headers);
 
             case path === "/set-utc":
-                return Response("fuck off");
+                return Response("fuck off", headers);
 
             case path === "/utc":
-                return Response(dbUtc);
+                return Response(dbUtc, headers);
 
             default:
-                return Response("nah mate");
+                return Response("nah mate", headers);
         };
     },
 });
