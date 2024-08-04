@@ -48,7 +48,8 @@ Bun.serve({
                 return Response.json(creds);
 
             case path === "/db-utc":
-                return Response(dbUtc);
+                if(dbUtc != ""){return Response(dbUtc)}
+                else{return Response("no timestamp found")}
 
             default:
                 return Response("nah mate");
