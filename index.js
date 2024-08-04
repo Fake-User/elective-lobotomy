@@ -40,6 +40,9 @@ Bun.serve({
                 console.log(creds);
                 return Response.json(creds);
 
+            case path === "/db-timestamp":
+                return Response(`${process.env.DB_TIMESTAMP}`);
+
             default:
                 return Response("nah mate");
         };
