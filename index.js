@@ -29,6 +29,13 @@ async function getCreds(){
     return creds;
 };
 
+let dbUtc = "";
+async function getDbUtc(){
+    const file = Bun.file("./store/db-utc.txt");
+    dbUtc = await file.text();
+}
+getDbUtc();
+
 Bun.serve({
     port: 3000,
     async fetch(req){
@@ -40,8 +47,8 @@ Bun.serve({
                 console.log(creds);
                 return Response.json(creds);
 
-            case path === "/db-timestamp":
-                return Response(`${process.env.DB_TIMESTAMP}`);
+            case path === "/db-utc":
+                return Response(dbUtc);
 
             default:
                 return Response("nah mate");
