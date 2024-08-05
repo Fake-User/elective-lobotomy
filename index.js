@@ -36,12 +36,12 @@ async function getCreds(){
     return creds;
 };
 
-/*
+
 async function initUTC(){
     await Bun.write("./store/utc.txt", "XXXX-XX-XX XX:XX:XX");
 }
 initUTC();
-*/
+
 
 let dbUtc = "";
 async function getUTC(){
